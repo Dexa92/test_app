@@ -1,0 +1,24 @@
+#insert-table {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image2 {
+    margin: 3px;
+    border: 0px;
+}
+
+.image1 {
+    margin: 3px;
+    position: relative;
+}
+
+.image1:after {
+    background-image: url("/static/test_app/image/default.png");
+    height:96px;
+    width:96px;
+    content: ' ';
+    position:absolute;
+    left:3px;
+    top:3px;
+}
