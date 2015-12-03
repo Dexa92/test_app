@@ -9,9 +9,8 @@ IndexController.prototype.createTable = function () {
         function(data){
             var get_width = data.width;
             var get_height = data.height;
-
             var div = document.getElementById('insert-table');
-            var mass = empty_array(get_height, get_width);      //Создаем массив пустых строк необходимой размерности
+            var mass = empty_array(get_height, get_width);
             var j = 0;
             for(var i = 0; i < get_height * get_width; i = i + 2){
                 if(i <= 19){
@@ -43,8 +42,6 @@ IndexController.prototype.createTable = function () {
             }
             var tmp = 0;
             var shuffled_mass = shuffleArray(mass);
-
-            //var div = document.getElementsByTagName("div")[4];
             var tbl = document.createElement("table");
             var tblBody = document.createElement("tbody");
             for(var current_row = 1; current_row <= get_height; current_row++){
@@ -76,18 +73,14 @@ IndexController.prototype.createTable = function () {
 
 var counter = 0;
 var open_cards = [];
-var deleted_elements = 0;
 
-function gameplay(index_td/*, height, width*/){
+function gameplay(index_td){
     var td_remove = document.getElementById(index_td);
     $(td_remove).removeClass('image1');
     $(td_remove).off('click');
     open_cards[counter] = index_td;
     counter++;
     if(counter == 2){
-        //if(document.getElementsByTagName('img').length == height * width - deleted_elements)
-       /* var image_1 = document.getElementsByTagName('img')[open_cards[0]];
-        var image_2 = document.getElementsByTagName('img')[open_cards[1]];*/
         var td_1 = document.getElementsByTagName('td')[open_cards[0]];
         var td_2 = document.getElementsByTagName('td')[open_cards[1]];
         var image_1 = td_1.childNodes[0];
@@ -99,7 +92,6 @@ function gameplay(index_td/*, height, width*/){
             setTimeout(function(){
                 td_1.removeChild(image_1);
                 td_2.removeChild(image_2);
-                //$(document.getElementsByTagName('table')[0]).on('click', 'td', function(){});
             },1000);
             counter = 0;
             open_cards = [];
@@ -108,7 +100,6 @@ function gameplay(index_td/*, height, width*/){
             setTimeout(function(){
                 $(td_1).addClass('image1');
                 $(td_2).addClass('image1');
-                //(document.getElementsByTagName('table')[0]).on('click', 'td', function(){});
             },1000);
             counter = 0;
             open_cards = [];
@@ -140,13 +131,6 @@ IndexController.prototype.init = function () {
         that.createTable();
         return false;
     });
-
-    /*$('.image2').on('click', function () {
-        // var id = $(this).attr("id");
-        that.gameplay();
-        return false;
-    });*/
-
 };
 
 $(function () {

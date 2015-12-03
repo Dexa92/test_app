@@ -3,6 +3,11 @@
     text-align: center;
 }
 
+td {
+    width: 103px;
+    height: 103px;
+}
+
 .image2 {
     margin: 3px;
     border: 0px;
@@ -11,6 +16,7 @@
 .image1 {
     margin: 3px;
     position: relative;
+    cursor: pointer;
 }
 
 .image1:after {
