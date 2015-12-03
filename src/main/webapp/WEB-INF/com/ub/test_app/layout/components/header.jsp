@@ -7,6 +7,6 @@
     <div class='col-md-12 text-center'>
         <h1>Найди две одинаковые картинки</h1>
         <button class="btn btn-info create-table">Начать новую игру</button>
-        <div class="alert alert-success" id="alert" style="display: none">Поздравляем! Вы победили!</div>
+        <div class="alert alert-success congratulations" id="alert" style="display: none">Поздравляем! Вы победили!</div>
     </div>
 </div>

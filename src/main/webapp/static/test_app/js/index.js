@@ -63,7 +63,7 @@ IndexController.prototype.createTable = function () {
             div.appendChild(tbl);
             $(tbl).on('click', 'td', function(){
                 var id_td = $(this).attr('id');
-                gameplay(id_td/*, get_height, get_width*/);
+                gameplay(id_td);
             });
             tbl.setAttribute("border", "1");
             tbl.setAttribute("align", "center");
@@ -92,6 +92,10 @@ function gameplay(index_td){
             setTimeout(function(){
                 td_1.removeChild(image_1);
                 td_2.removeChild(image_2);
+                var imgs = document.getElementsByTagName('img');
+                if(imgs.length == 0){
+                    $('#alert').show();
+                }
             },1000);
             counter = 0;
             open_cards = [];
@@ -103,9 +107,6 @@ function gameplay(index_td){
             },1000);
             counter = 0;
             open_cards = [];
-        }
-        if(document.getElementsByTagName('img').length == 0){
-            $('#alert').show();
         }
     }
 };
